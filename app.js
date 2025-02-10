@@ -1,10 +1,13 @@
 const express = require('express');
-
+const favicon = require('serve-favicon');
 const router = require('./routes/inventoryRoutes');
-
+const path = require('path');
 const { sequelize } = require('./models/inventoryModels');
 
 const app = express();
+app.use(express.static('public'));
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 const PORT = process.env.PORT || 3010;
 
