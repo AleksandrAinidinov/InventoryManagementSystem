@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Inventory Item</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container">
+    <h1 class="mt-3">Add Item</h1>
+    <form action="/add" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Name:</label>
+            <input type="text" name="Name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Quantity:</label>
+            <input type="number" name="Quantity" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Price:</label>
+            <input type="number" name="Price" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Description:</label>
+            <input type="text" name="Description" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Item</button>
+        <a href="/" class="btn btn-danger">Cancel</a>
+    </form>
+</body>
+</html>
