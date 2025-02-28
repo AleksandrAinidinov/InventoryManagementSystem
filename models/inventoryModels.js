@@ -11,6 +11,7 @@ const sequelize = new Sequelize('neondb', 'neondb_owner', 'npg_eHV4Laqn5vWm', {
     }
 });
 
+// Inventory Model that stores all the items
 const Inventory = sequelize.define('Inventory', {
     Name: {
         type: DataTypes.STRING,
@@ -33,5 +34,63 @@ const Inventory = sequelize.define('Inventory', {
     timestamps: false,
 });
 
+// Sales Model that stores all the transactions
+const Sales = sequelize.define('Sales', {
+    ItemSold: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    QuantitySold: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    PricePerItem: {
+        type: DataTypes.DOUBLE,
+        allowNull: false,
+    },
+    TotalSaleAmount: {
+        type: DataTypes.DOUBLE,
+        allowNull: false,
+    },
+    SaleDate: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+    },
+}, {
+    tableName: 'sales',
+    timestamps: false,
+});
 
-module.exports = { Inventory, sequelize }
+
+// Ledger Model that stores all the transactions with debit, credit and balance 
+const Ledger = sequelize.define('Ledger', {
+    date: { 
+        type: DataTypes.DATE, 
+        allowNull: false, 
+        defaultValue: DataTypes.NOW 
+    },
+    name: { 
+        type: DataTypes.STRING, 
+        allowNull: false 
+    },
+    debit: { type: DataTypes.FLOAT, 
+        allowNull: true, 
+        defaultValue: 0 
+    },
+    credit: { type: DataTypes.FLOAT, 
+        allowNull: true, 
+        defaultValue: 0 
+    },
+    balance: { 
+        type: DataTypes.FLOAT, 
+        allowNull: false, 
+        defaultValue: 0 
+    },
+}, {
+    tableName: 'ledger',
+    timestamps: false,
+});
+
+
+module.exports = { Inventory, Sales, Ledger, sequelize }

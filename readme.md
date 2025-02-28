@@ -1,16 +1,17 @@
-# Inventory Management System
+# Sales Tracking With Simple Accounting Principles Repository
 
 ## Developer
 
 - **Name**: Aleksandr Ainidinov  
 - **Student ID**: 8905450
 - **Class**: PROG2390 - Small Business Solutions - Sec4
-- **Date**: 2025-02-09 
-- **GitHub Repository**: [InventoryManagementSystem Repository](https://github.com/AleksandrAinidinov/InventoryManagementSystem)  
+- **Date**: 2025-02-28
+- **Assignment**: Assignment 2: Sales Tracking with Simple Accounting Principles
+- **GitHub Repository**: [SalesTrackingWithSimpleAccountingPrinciplesRepository](https://github.com/AleksandrAinidinov/Sales-Tracking-and-Accounting-System)
 
 ---
 
-A basic Node.js application using Express.js for a simple website with four pages. This project demonstrates a foundational understanding of server setup and routing. It also uses .ejs templates to interact with data.
+An extension of a basic Node.js Inventory Management System application using Express.js. This version of the system logs any action performed on items from the inventory in a ledger. While also tracking all the operations and sales.
 
 ---
 
@@ -18,8 +19,8 @@ A basic Node.js application using Express.js for a simple website with four page
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/AleksandrAinidinov/InventoryManagementSystem.git
-   cd InventoryManagementSystem
+   git clone https://github.com/AleksandrAinidinov/Sales-Tracking-and-Accounting-System.git
+   cd SalesTrackingWithSimpleAccountingPrinciplesRepository
    ```
 
 2. **Install dependencies**:
@@ -44,10 +45,18 @@ After starting the server, you can access the following pages:
   The main landing page of the application.
 - **Add Item**: `http://localhost:3010/add`  
   Page that allows adding a new inventory item.
-- **Edit Item**: `http://localhost:3010/edit:id`  
+- **Edit Item**: `http://localhost:3010/edit/id`  
   Page that allows to edit the existing item.
 - **Delete Item**: `http://localhost:3010/delete/id`  
   Page that allows to delete the item.
+- **Sell Item**: `http://localhost:3010/sell`  
+  Page that allows selling any existing inventory item.
+- **All Sales**: `http://localhost:3010/sales`  
+  Page that allows to view all of the sales and total revenue.
+- **Sales Summary**: `http://localhost:3010/sales`  
+  Page that allows to view total revenue, total number of sales and 3 recent sales.
+- **Ledger**: `http://localhost:3010/ledger`  
+  Page that displays all the actions in a ledger form.
 
 ---
 
